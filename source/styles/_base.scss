@@ -1,0 +1,59 @@
+/*  === Body ===
+    ================================================= */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @extend .basefont;
+  @include typeset(14, 1.5);
+  color: $text-color;
+}
+
+/*  === Headings ===
+    ================================================= */
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+
+/*  === Links ===
+    ================================================= */
+
+a { color: $link-color; }
+a:hover { text-decoration: underline; }
+
+
+/*  === Text Selection ===
+    ================================================= */
+
+::-moz-selection { background: $selection-color; color: #fff; text-shadow: none; }
+::selection { background: $selection-color; color: #fff; text-shadow: none; }
+
+
+/*  === Border Box Default ===
+    ================================================= */
+    
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
