@@ -1,4 +1,4 @@
-#= require_tree .
+#= require_directory .
 
 window.APP =
   init: ->
