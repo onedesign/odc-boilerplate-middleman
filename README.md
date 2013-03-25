@@ -37,3 +37,18 @@ Middleman uses [Sprockets](https://github.com/sstephenson/sprockets) for importi
 Include new scripts by adding to the top of `/scripts/site.coffee` like so:
 
 `#= require vendor/additional-lib` includes a file called `additional-lib.js` located in `/scripts/vendor/`
+
+## Deployment…
+
+The app can be deployed most easily using [Middleman buildpack from Indirect](https://github.com/indirect/middleman-heroku-static-app), which automatically builds your middleman site directly on heroku at each deploy. From your app directory:
+
+```
+# When creating a new app...
+heroku create myapp --buildpack http://github.com/indirect/heroku-buildpack-middleman.git
+
+# Or to an existing app...
+heroku config:add BUILDPACK_URL=http://github.com/indirect/heroku-buildpack-middleman.git
+
+# And then deploy the app as usual...
+git push heroku master
+```
