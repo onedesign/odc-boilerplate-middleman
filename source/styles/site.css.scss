@@ -1,8 +1,7 @@
 @import "reset";
-@import "css3-mixins";
-@import "helpers";
+@import "bourbon";
+@import "mixins";
 @import "typography";
 @import "color";
 @import "base";
 @import "styles"; /* Individual site styles go in here or in additional .scss modules */
-@import "media-queries";

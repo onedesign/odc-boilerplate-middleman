@@ -1,0 +1,96 @@
+/* ==============================================================
+   Mixins
+   ============================================================== */
+
+
+// Image Replacement
+// ==============================================================
+
+// ## Image Replacement `@extend %ir`
+// Hides all text contained within the element
+
+%ir {
+  text-indent: -9999em;
+}
+
+
+// Float Clearing
+// ==============================================================
+
+// ## Float Clearing `@extend %clearfix`
+// Forces a non-floated parent element to enclose its floated child elements.
+
+%clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: ""; display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Type Sizing
+// ==============================================================
+
+// ## Typeset `@include typeset($font-size, $line-height: auto)`
+// `@include typeset(14, 1.5)` would set `font-size: 14px; font-size: 1.4rem;` and `line-height: 1.5;` if the optional line-height argument is passed.
+
+@mixin typeset ($font-size, $line-height: auto) {
+  font-size: $font-size + px;
+  font-size: ($font-size / 10) + rem;
+  line-height: $line-height;
+}
+
+
+// Media Query
+// ==============================================================
+
+// ## Media Query `@include mediaquery($point) { width: 100%; }`
+// Creates a media query declaration of the passed size with the containing declarations. Defined `$points` are `small` (mobile) and `medium` (tablet).
+
+// Example Use:
+// 
+// @include mediaquery(small) {
+//   .my-selector {
+//     width: 20em;
+//   }
+// }
+
+@mixin mediaquery ($point) {
+  @if $point == small {
+    @media screen and (max-width: 40em) { @content; }
+  }
+  @else if $point == medium {
+    @media screen and (max-width: 52em) { @content; }
+  }
+}
+
+
+// Breakpoint
+// ==============================================================
+
+// ## Media Queries Breakpoint `@include breakpoint($point) { width: 100%; }`
+// Creates a media query declaration of the passed size for the containing selector. Defined `$points` are `small` (mobile) and `medium` (tablet).
+
+// Example Use:
+// 
+// .my-selector {
+//    width: 20em;
+//    
+//    @include breakpoint(small) {
+//      width: 100%;
+//    }
+// }
+
+@mixin breakpoint ($point) {
+  @if $point == small {
+    @media screen and (max-width: 40em) { @content; }
+  }
+  @else if $point == medium {
+    @media screen and (max-width: 52em) { @content; }
+  }
+}

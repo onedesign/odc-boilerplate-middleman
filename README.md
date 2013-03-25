@@ -26,9 +26,9 @@ When you're ready to turn your project into a static site, run `middleman build`
 
 This will compile all templates and copy them, along with compiled Sass and CoffeeScript files, over to a `build` directory.
 
-## Using Compass...
+## Using Bourbon...
 
-Middleman gives you automatic access to [Compass](http://compass-style.org/) if you'd like to use it. Just add `@import "compass";` to the top of `styles/site.css.scss`
+[Bourbon](http://bourbon.io) is included for CSS vendor prefixing and helpers.
 
 ## Adding Scripts…
 
